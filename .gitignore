@@ -1,0 +1,47 @@
+# Ignore Visual Studio and .NET build artifacts
+StorageFabricBackend/bin/
+StorageFabricBackend/obj/
+StorageFabricBackend/.vs/
+StorageFabricBackend/*.user
+StorageFabricBackend/*.suo
+StorageFabricBackend/*.sqlite
+StorageFabricBackend/*.db
+StorageFabricBackend/StorageFabricBackend.csproj.user
+
+# Ignore compiled files
+*.exe
+*.dll
+*.pdb
+*.app
+*.cache
+*.ide
+
+# Ignore Terraform files
+Terraform/terraform.tfstate
+Terraform/terraform.tfstate.*
+Terraform/.terraform/
+Terraform/.terraform.lock.hcl
+Terraform/terraform.tfvars
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*.sln.docstates
+.DS_Store
+
+# Ignore Logs
+StorageFabricBackend/logs/
+*.log
+
+# Ignore user-specific configuration files
+StorageFabricBackend/.editorconfig
+
+# Ignore generated assets
+StorageFabricBackend/wwwroot/
+StorageFabricBackend/node_modules/

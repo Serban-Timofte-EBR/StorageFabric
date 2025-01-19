@@ -1,0 +1,6 @@
+@StorageFabricBackend_HostAddress = http://localhost:5034
+
+GET {{StorageFabricBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
