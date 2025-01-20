@@ -15,6 +15,12 @@ variable "vm_count" {
   default     = 1
 }
 
+variable "ssh_public_key_path" {
+  description = "Path to the SSH public key file"
+  type        = string
+  default     = "~/.ssh/id_rsa.pub"
+}
+
 terraform {
   required_providers {
     azurerm = {
@@ -55,6 +61,13 @@ resource "azurerm_linux_virtual_machine" "storage_fabric_vms" {
   size                = "Standard_B1ls"
 
   admin_username = "azureuser"
+
+  disable_password_authentication = true
+
+  admin_ssh_key {
+    username   = "azureuser"
+    public_key = file(var.ssh_public_key_path) 
+  }
 
   network_interface_ids = [
     azurerm_network_interface.storage_fabric_nics[count.index].id
